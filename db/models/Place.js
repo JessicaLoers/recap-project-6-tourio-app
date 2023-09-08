@@ -7,9 +7,9 @@ const placeSchema = new Schema({
   location: String,
   image: String,
   mapURL: String,
-  decription: String,
+  description: String,
 });
 
-const Place = mongoose.model.Place || mongoose.model("Place", placeSchema);
+const Place = mongoose.models.Place || mongoose.model("Place", placeSchema);
 
 export default Place;
