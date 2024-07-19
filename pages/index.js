@@ -23,12 +23,12 @@ const FixedLink = styled(StyledLink)`
   right: 50px;
 `;
 export default function Home() {
-  const { data } = useSWR("/api/places", { fallbackData: [] });
+  const { data: places } = useSWR("/api/places", { fallbackData: [] });
 
   return (
     <>
       <List role="list">
-        {data.map((place) => {
+        {places.map((place) => {
           return (
             <ListItem key={place._id}>
               <Card
