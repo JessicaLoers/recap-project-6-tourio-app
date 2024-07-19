@@ -14,7 +14,7 @@ export default async function handler(request, response) {
     return response.status(400).json({ message: "ID is required" });
   }
 
-  try {
+
     if (request.method === "GET") {
       try {
         const place = await Place.findById(id);
@@ -47,7 +47,5 @@ export default async function handler(request, response) {
     }
     
     return response.status(405).json({ message: "Method not allowed" });
-  } catch (error) {
-    return response.status(500).json({ message: "An unexpected error occurred", error: error.message });
-  }
+ 
 }
